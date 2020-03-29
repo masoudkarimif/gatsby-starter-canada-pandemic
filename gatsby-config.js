@@ -4,7 +4,7 @@ module.exports = {
 		siteUrl: `https://gatsby-starter-clean-resume.netlify.com/`,
     name: `The Local News`,
     description: `Tracking The Spread of Coronavirus in Canada`,
-    role: `Software Developer`,
+    last_updated: `Mar 29, 2020 - 12:30 PM`,
     email: `luke@thelightside.com`,
     socialMedia : [
         {"name": "github", "link": "https://github.com/masoudkarimif/gatsby-starter-clean-resume"},

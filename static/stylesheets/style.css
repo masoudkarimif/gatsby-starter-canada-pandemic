@@ -390,3 +390,15 @@ path:hover {
 .container {
   position: static;
 }
+#updated {
+  color: white;
+  background: #D0021B;
+  font-weight: bold;
+  font-size: .6em;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+.center-text {
+  text-align: center;
+}

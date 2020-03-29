@@ -10,10 +10,10 @@ const Layout = (props)=> {
           query  {
             site {
               siteMetadata {
-                role
                 email
                 socialMedia {name, link}
                 theme
+                name
                 font
               }
             }
