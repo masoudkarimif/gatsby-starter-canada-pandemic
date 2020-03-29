@@ -324,4 +324,69 @@
 .page-header {
   text-align: center;
   color: #444;
+  margin-bottom: 4px;
+}
+
+
+.feature {
+  fill: #ccc;
+  cursor: pointer;
+}
+
+.feature.active {
+  fill: orange;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+path:hover {
+  fill: gray;
+}
+
+#popup {
+  position: absolute;
+  left: 100px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,.9);
+  color: black;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+#popup table {
+  margin-bottom: 0;
+}
+#popup h6 {
+  margin: 0;
+  font-size: 1.2rem;
+  border-bottom: .5px solid #ddd;
+  margin-bottom: 6px;
+}
+#popup th, #popup td {
+  padding: 0px;
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  border: none;
+}
+#popup th:not(:last-child) {
+  padding-right: 6px;
+}
+#popup th {
+  font-size: 1.0rem;
+}
+
+#map-holder {
+  text-align: center;
+}
+#sv-holder {
+  display: inline-block;
+}
+.container {
+  position: static;
 }
