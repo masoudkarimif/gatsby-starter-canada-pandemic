@@ -10,7 +10,6 @@ const Layout = (props)=> {
           query  {
             site {
               siteMetadata {
-                name
                 role
                 email
                 socialMedia {name, link}
@@ -24,7 +23,7 @@ const Layout = (props)=> {
     return (
       <>
         <Helmet>
-           <title>{props.pageTitle} - {data.site.siteMetadata.name || ""}</title>
+           <title>{props.pageDescription} - {props.pageTitle || ""}</title>
 					 <meta name="description" content={props.pageDescription || ""} />
         </Helmet>
 
