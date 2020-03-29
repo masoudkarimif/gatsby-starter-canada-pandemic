@@ -1,0 +1,320 @@
+ .site-title {
+     font-size: 22px;
+     font-weight: 300;
+     line-height: 54px;
+     letter-spacing: -1px;
+     margin-bottom: 0;
+     float: left;
+}
+ .site-title {
+     color: #444;
+}
+ .site-title:visited {
+     color: #444
+}
+ .site-nav {
+     line-height: 54px;
+     text-align: center;
+}
+ .site-nav .nav-trigger {
+     display: none;
+}
+ .site-nav .menu-icon {
+     display: none;
+}
+ .site-nav .page-link {
+     color: #606c76;
+     line-height: 1.5;
+     font-size: .9em;
+     padding: 0 2px 4px 2px;
+}
+ .site-nav .page-link:not(:last-child) {
+     margin-right: 60px;
+}
+ @media screen and (max-width: 640px) {
+     .site-nav {
+         position: absolute;
+         top: 9px;
+         right: 15px;
+         background-color: #fdfdfd;
+         border: 1px solid #e8e8e8;
+         border-radius: 5px;
+         text-align: right;
+    }
+     .site-nav label[for="nav-trigger"] {
+         display: block;
+         float: right;
+         width: 36px;
+         height: 36px;
+         z-index: 2;
+         cursor: pointer;
+    }
+     .site-nav .menu-icon {
+         display: block;
+         float: right;
+         width: 36px;
+         height: 26px;
+         line-height: 0;
+         padding-top: 10px;
+         text-align: center;
+    }
+     .site-nav .menu-icon > svg {
+         fill: #424242;
+    }
+     .site-nav input ~ .trigger {
+         clear: both;
+         display: none;
+    }
+     .site-nav input:checked ~ .trigger {
+         display: block;
+         padding-bottom: 5px;
+    }
+     .site-nav .page-link {
+         display: block;
+         padding: 5px 10px;
+         margin-left: 20px;
+    }
+     .site-nav .page-link:not(:last-child) {
+         margin-right: 0;
+    }
+}
+ .site-nav label {
+     margin-bottom: 0;
+}
+ .xs-visible {
+     display: none !important;
+}
+ @media screen and (max-width: 640px) {
+     .xs-visible {
+         display: block !important;
+         line-height: 54px;
+    }
+}
+ #page-content {
+     padding-top: 95px;
+}
+ #content-wrapper {
+}
+ footer {
+     margin-top: 80px;
+     padding-top: 25px;
+     font-size: .7em;
+     border-top: 1px solid #f8f8f8;
+     color: #888;
+}
+ footer p {
+     margin-bottom: 4px;
+     text-align: center;
+}
+ #cp {
+     font-size: 1.0em;
+}
+ #by-gatsby {
+     font-size: .9em;
+}
+ #profile-wrapper {
+     text-align: center;
+     flex: 2 2 auto;
+}
+ #profile-wrapper p {
+     margin-bottom: 2px;
+}
+ #profile-img {
+     max-width: 180px;
+}
+ .social-icon:not(:last-child) {
+     margin-right: 4px;
+}
+ #social-icons-wrapper {
+     padding-top: 8px;
+}
+ blockquote, dl, figure, form, ol, p, pre, table, ul {
+     margin-bottom: 1.3rem;
+}
+ @media screen and (max-width: 640px) {
+     #page-content {
+         padding-top: 72px;
+    }
+     #profile-img {
+    }
+     #profile-wrapper {
+         border-bottom: 1px solid #f8f8f8;
+         padding-bottom: 16px;
+    }
+     #content-wrapper {
+         border-left: none;
+         padding-top: 16px;
+         padding-left: 0rem;
+    }
+     h2 {
+         text-align: center;
+    }
+}
+ .item-table {
+     margin-bottom: 28px;
+     padding-bottom: 10px;
+}
+ .skill-table {
+     margin-bottom: 10px;
+}
+ .skill-table td {
+     text-indent: 2px;
+}
+ .skill-table .item-when {
+     font-size: .8em;
+     color: #888;
+}
+ .item-table td {
+     border: none;
+     padding: .0rem 0.0rem;
+}
+ .item-name {
+     font-weight: bold;
+}
+ .item-name, .item-when {
+     color: #444;
+}
+ .item-when, .item-where {
+     text-align: right;
+}
+ .item-when {
+     font-size: .9em;
+}
+ .item-where {
+     font-size: .8em;
+}
+ .item-org {
+     font-size: .87em;
+}
+ td.item-more-info {
+     padding-top: 6px;
+     color: #444;
+}
+ .skill-wrapper {
+     margin-bottom: 16px;
+}
+ .skill-meter-wrapper {
+     width: 100%;
+     border: 1px solid #efefef;
+     border-radius: 4px;
+     height: 25px;
+     overflow: hidden;
+}
+ .skill-name {
+     margin-bottom: .5rem;
+     text-indent: 2px;
+}
+ #profile-info-wrapper {
+     margin-bottom: 4px;
+}
+ #profile-name {
+     margin-bottom: 2px;
+     color: #555;
+     font-size: 2.3rem;
+}
+ #profile-role {
+     margin-bottom: 2px;
+     font-size: 1.5rem;
+}
+ #profile-email {
+     font-size: .8em;
+}
+ .social-icon:hover {
+     opacity: .9;
+}
+ #menu-name {
+     font-size: 1.2em;
+}
+ p, li {
+     color: #444;
+}
+ .site-header {
+     position: fixed;
+     z-index: 1000;
+     width: 100%;
+     top: 0;
+     left: 0;
+     background: #fcfcfc;
+     border-top-width: 2px;
+     border-top-style: solid;
+     border-bottom: 1px solid #e8e8e8;
+     min-height: 55.95px;
+}
+ .skill-meter {
+     height: 100%;
+}
+ a {
+     text-decoration: none;
+}
+/* themes */
+/* default = great-gatsby */
+ a {
+     color: #9b4dca;
+}
+ .skill-meter {
+     background-color: #9b4dca;
+}
+ a:hover, a:focus, .site-nav .page-link.active {
+     color: #50A !important;
+}
+ .site-header {
+     border-top-color: #50A;
+}
+/* darth-vader */
+ .theme-darth-vader a {
+     color: #777;
+}
+ .theme-darth-vader .skill-meter {
+     background-color: #777;
+}
+ .theme-darth-vader a:hover, .theme-darth-vader a:focus, .theme-darth-vader .site-nav .page-link.active {
+     color: #000 !important;
+}
+ .theme-darth-vader .site-header {
+     border-top-color: #000;
+}
+/* luke-lightsaber */
+ .theme-luke-lightsaber a {
+     color: #5c94bd;
+}
+ .theme-luke-lightsaber .skill-meter {
+     background-color: #5c94bd;
+}
+ .theme-luke-lightsaber a:hover, .theme-luke-lightsaber a:focus, .theme-luke-lightsaber .site-nav .page-link.active {
+     color: #416a88 !important;
+}
+ .theme-luke-lightsaber .site-header {
+     border-top-color: #416a88;
+}
+/* wonder-woman */
+ .theme-wonder-woman a {
+     color: #dc4e48;
+}
+ .theme-wonder-woman .skill-meter {
+     background-color: #dc4e48;
+}
+ .theme-wonder-woman a:hover, .theme-wonder-woman a:focus, .theme-wonder-woman .site-nav .page-link.active {
+     color: #c81912 !important;
+}
+ .theme-wonder-woman .site-header {
+     border-top-color: #c81912;
+}
+/* master-yoda */
+ .theme-master-yoda a {
+     color: #4baea0;
+}
+ .theme-master-yoda .skill-meter {
+     background-color: #4baea0;
+}
+ .theme-master-yoda a:hover, .theme-master-yoda a:focus, .theme-master-yoda .site-nav .page-link.active {
+     color: #5f7f54 !important;
+}
+ .theme-master-yoda .site-header {
+     border-top-color: #5f7f54;
+}
+
+
+.font-programmer {
+  font-family: "IBM Plex Mono";
+  font-size: .9em;
+}
