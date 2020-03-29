@@ -14,7 +14,7 @@
 }
  .site-nav {
      line-height: 54px;
-     text-align: center;
+     text-align: right;
 }
  .site-nav .nav-trigger {
      display: none;
@@ -87,11 +87,13 @@
  @media screen and (max-width: 640px) {
      .xs-visible {
          display: block !important;
-         line-height: 54px;
     }
 }
+#menu-name {
+    line-height: 54px;
+}
  #page-content {
-     padding-top: 95px;
+     padding-top: 80px;
 }
  #content-wrapper {
 }
@@ -317,4 +319,9 @@
 .font-programmer {
   font-family: "IBM Plex Mono";
   font-size: .9em;
+}
+
+.page-header {
+  text-align: center;
+  color: #444;
 }

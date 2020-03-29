@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
 		siteUrl: `https://gatsby-starter-clean-resume.netlify.com/`,
     name: `The Local News`,
+    description: `Tracking The Spread of Coronavirus in Canada`,
     role: `Software Developer`,
     email: `luke@thelightside.com`,
     socialMedia : [

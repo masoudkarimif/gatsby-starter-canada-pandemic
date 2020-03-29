@@ -14,7 +14,7 @@ const Menu = (props)=> {
     <header className="site-header">
       <div className="container">
         <div className="row">
-            <div className="column xs-visible" id="menu-name">
+            <div className="column" id="menu-name">
                 <Link to="/">{props.name}</Link>
             </div>
 

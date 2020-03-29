@@ -7,14 +7,14 @@ const data = useStaticQuery(graphql`
           query  {
             site {
               siteMetadata {
-                  about
+                  name
+                  description
               }
             }
           }
         `)
   return (
-    <Layout pageTitle="About" pageDescription="Learn more about me" >
-        <div dangerouslySetInnerHTML={{__html: data.site.siteMetadata.about}} />
+    <Layout pageTitle={data.site.siteMetadata.name} pageDescription={data.site.siteMetadata.description} >
     </Layout>
     )
 }

@@ -36,7 +36,7 @@ const Layout = (props)=> {
             <div className="container" id="page-content">
                 <div className="row">
                     <div className="column" id="content-wrapper">
-                      <PageHeader title={props.pageTitle}/>
+                      <PageHeader title={props.pageDescription}/>
                           {props.children}
                     </div>
                 </div>
