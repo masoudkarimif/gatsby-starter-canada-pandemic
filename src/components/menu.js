@@ -6,7 +6,7 @@ const Menu = (props)=> {
   const menuItems = [
     {name: "FAQ", link:"#faq"},
     {name: "Tables", link:"#tables"},
-    {name: "Map", link:"#map"},
+    {name: "Map", link:"#top"},
   ].map((item, index)=>(<MenuItem to={item.link} name={item.name} key={index} className={(props.currentPage.toLowerCase() === item.name.toLowerCase())? " active" : ""}/>))
 
 

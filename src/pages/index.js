@@ -5,6 +5,13 @@ import LastUpdate from '../components/last-update'
 import {useStaticQuery, graphql} from 'gatsby'
 import canadaMapData from '../../static/canada.json'
 
+
+const DataSourceReference = (props) => {
+  return (
+    <p id="data-source" dangerouslySetInnerHTML={{__html:"Source: " + props.data}} />
+  )
+}
+
 export default (props) => {
 const data = useStaticQuery(graphql`
           query  {
@@ -13,6 +20,7 @@ const data = useStaticQuery(graphql`
                   name
                   description
                   last_updated
+                  data_source
               }
             }
           }
@@ -21,6 +29,7 @@ const data = useStaticQuery(graphql`
     <Layout pageTitle={data.site.siteMetadata.name} pageDescription={data.site.siteMetadata.description} >
         <LastUpdate date={data.site.siteMetadata.last_updated} />
         <Map data={"Hi"} mapData={canadaMapData}/>
+        <DataSourceReference data={data.site.siteMetadata.data_source} />
     </Layout>
     )
 }

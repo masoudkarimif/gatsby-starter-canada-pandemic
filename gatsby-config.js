@@ -5,6 +5,7 @@ module.exports = {
     name: `The Local News`,
     description: `Tracking The Spread of Coronavirus in Canada`,
     last_updated: `Mar 29, 2020 - 12:30 PM`,
+    data_source: `<a target="_blank" href="https://newsinteractives.cbc.ca/coronavirustracker/" rel="noopener noreferrer">CBC Coronavirus Website</a>`,
     email: `luke@thelightside.com`,
     socialMedia : [
         {"name": "github", "link": "https://github.com/masoudkarimif/gatsby-starter-clean-resume"},

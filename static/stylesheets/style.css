@@ -402,3 +402,8 @@ path:hover {
 .center-text {
   text-align: center;
 }
+#data-source {
+  text-align: center;
+  color: #ccc;
+  font-size: .6em;
+}
