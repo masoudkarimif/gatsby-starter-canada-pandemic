@@ -407,3 +407,19 @@ path:hover {
   color: #ccc;
   font-size: .6em;
 }
+#middle-info-holder {
+  margin-top: 40px;
+}
+#table-holder th {
+  font-size: .9em;
+}
+#table-holder td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: .8em;
+  border-bottom: none;
+  text-indent: 2px;
+}
+#table-holder tbody tr:nth-child(odd) {
+  background-color: #efefef;
+}

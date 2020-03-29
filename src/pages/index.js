@@ -2,6 +2,7 @@ import React from "react"
 import Layout from '../components/layout'
 import Map from '../components/map'
 import LastUpdate from '../components/last-update'
+import Table from '../components/table'
 import {useStaticQuery, graphql} from 'gatsby'
 import canadaMapData from '../../static/canada.json'
 
@@ -31,6 +32,10 @@ const data = useStaticQuery(graphql`
         <LastUpdate date={data.site.siteMetadata.last_updated} />
         <Map data={data.site.siteMetadata.data} mapData={canadaMapData}/>
         <DataSourceReference data={data.site.siteMetadata.data_source} />
+        <div className="row" id="middle-info-holder">
+          <Table data={data.site.siteMetadata.data} />
+          <p className="column">Something</p>
+        </div>
     </Layout>
     )
 }
