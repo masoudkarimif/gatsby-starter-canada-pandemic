@@ -106,7 +106,7 @@ class CanadaMap extends React.Component {
 
     render() {
       return (
-        <div ref={this.svgRef} id="svg-holder" ></div>
+        <div ref={this.svgRef} id="svg-holder" style={{width: this.props.width, height: this.props.height}}></div>
       )
     }
 }
@@ -145,10 +145,10 @@ cumulativeOffset(element) {
     const data = this.cumulativeOffset(document.getElementById("svg-holder"))
     const popupRect = document.getElementById("popup").getBoundingClientRect();
     let popup = {...this.state.popup}
-    popup.left = e[0] + data.left - popupRect.width / 2
+    popup.left = e[0] + data.left - popupRect.width / 2 
     popup.top = e[1] + data.top - popupRect.height - 10
 
-
+    console.log(popupRect, e[0])
      this.setState({
        popup
      })
