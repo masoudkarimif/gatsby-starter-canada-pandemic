@@ -20,6 +20,7 @@ const data = useStaticQuery(graphql`
                   name
                   description
                   last_updated
+                  data {province, cases, deaths}
                   data_source
               }
             }
@@ -28,7 +29,7 @@ const data = useStaticQuery(graphql`
   return (
     <Layout pageTitle={data.site.siteMetadata.name} pageDescription={data.site.siteMetadata.description} >
         <LastUpdate date={data.site.siteMetadata.last_updated} />
-        <Map data={"Hi"} mapData={canadaMapData}/>
+        <Map data={data.site.siteMetadata.data} mapData={canadaMapData}/>
         <DataSourceReference data={data.site.siteMetadata.data_source} />
     </Layout>
     )

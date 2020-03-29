@@ -11,7 +11,6 @@ const Layout = (props)=> {
             site {
               siteMetadata {
                 email
-                socialMedia {name, link}
                 theme
                 name
                 font

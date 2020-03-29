@@ -37,21 +37,7 @@ class CanadaMap extends React.Component {
       this.svgRef = React.createRef();
       this.mapData = this.props.mapData;
 
-      this.hoverData = [
-        {"name": "Alberta", "data": 542},
-        {"name": "Saskatchewan", "data": 104},
-        {"name": "Manitoba", "data": 64},
-        {"name": "Newfoundland", "data": 120},
-        {"name": "Prince Edward Island", "data": 11},
-        {"name": "Nova Scotia", "data": 110},
-        {"name": "Northwest Territories", "data": 1},
-        {"name": "Nunavut", "data": 0},
-        {"name": "Ontario", "data": 1144},
-        {"name": "New Brunswick", "data": 51},
-        {"name": "Yukon", "data": 4},
-        {"name": "British Columbia", "data": 884},
-        {"name": "Quebec", "data": 2498},
-      ]
+      this.popupData = this.props.popupData;
     }
 
 
@@ -89,11 +75,11 @@ class CanadaMap extends React.Component {
         .enter()
         .append("path")
         .attr("d", path)
-        .attr("fill", (d,i)=>this.fillColor(this.hoverData[i].data))
+        .attr("fill", (d,i)=>this.fillColor(this.popupData[i].cases))
         .attr("stroke", "#444")
         .attr("stroke-width", "0.35")
         .on("mouseenter", function(d, i){
-            self.props.mouseEnterHandler(self.hoverData[i].name, self.hoverData[i].data, 100);
+            self.props.mouseEnterHandler(self.popupData[i].province, self.popupData[i].cases, self.popupData[i].deaths);
         })
         .on("mouseleave", function() {
             self.props.mouseLeaveHandler();
@@ -145,10 +131,9 @@ cumulativeOffset(element) {
     const data = this.cumulativeOffset(document.getElementById("svg-holder"))
     const popupRect = document.getElementById("popup").getBoundingClientRect();
     let popup = {...this.state.popup}
-    popup.left = e[0] + data.left - popupRect.width / 2 
+    popup.left = e[0] + data.left - popupRect.width / 2
     popup.top = e[1] + data.top - popupRect.height - 10
 
-    console.log(popupRect, e[0])
      this.setState({
        popup
      })
@@ -186,6 +171,7 @@ cumulativeOffset(element) {
 
           <CanadaMap
               mapData={this.props.mapData}
+              popupData={this.props.data}
               mouseMoveHandler={this.mouseMove.bind(this)}
               mouseEnterHandler={this.mouseEnter.bind(this)}
               mouseLeaveHandler={this.mouseLeave.bind(this)}
