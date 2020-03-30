@@ -58,7 +58,7 @@ All you need to do for customizing this template is to edit this file.
     description: `Tracking The Spread of Coronavirus in Canada`,
     last_updated: `Mar 30, 2020 - 9:45 a.m. ET`,
 	```
-  Here you will enter the general information about your website.
+  	Here you will enter the general information about your website.
 
 
 2. **Data**
