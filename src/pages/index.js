@@ -33,9 +33,9 @@ const data = useStaticQuery(graphql`
   return (
     <Layout pageTitle={data.site.siteMetadata.name} pageDescription={data.site.siteMetadata.description} >
         <LastUpdate date={data.site.siteMetadata.last_updated} />
+        <DataSourceReference data={data.site.siteMetadata.data_source} />
         <Map data={data.site.siteMetadata.data} mapData={canadaMapData}/>
         <div className="container">
-          <DataSourceReference data={data.site.siteMetadata.data_source} />
           <div className="dummy-link" id="tables-link"></div>
           <div className="row" id="middle-info-holder">
             <Table data={data.site.siteMetadata.data} />
