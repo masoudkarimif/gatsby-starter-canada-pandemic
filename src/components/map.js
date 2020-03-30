@@ -206,7 +206,7 @@ cumulativeOffset(element) {
 
   render() {
       return (
-        <div id="map-holder" className="container">
+        <div id="map-holder" role="img" aria-lable="Map showing provinces hit by the virus" className="container">
           <Popup
               province={this.state.province}
               cases={this.state.cases}
