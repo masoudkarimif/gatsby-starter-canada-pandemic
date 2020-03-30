@@ -409,7 +409,7 @@ path:hover {
   font-size: .6em;
 }
 #middle-info-holder {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 #table-holder th {
   font-size: .9em;
@@ -497,8 +497,11 @@ svg {
     margin-bottom: 8px;
 }
 #faqs {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #faq-title {
   margin-bottom: 8px;
+}
+.dummy-link {
+  height: 40px;
 }
