@@ -466,10 +466,10 @@ svg {
 }
 
 .faq:not(:last-child) {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #efefef;
 }
 .faq-question, .faq-answer {
-  padding: 8px;
+  padding: 8px 0;
 }
 .faq-question {
   cursor: pointer;
@@ -492,4 +492,13 @@ svg {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+}
+.faq-answer p {
+    margin-bottom: 8px;
+}
+#faqs {
+  margin-top: 30px;
+}
+#faq-title {
+  margin-bottom: 8px;
 }
