@@ -57,44 +57,42 @@ All you need to do for customizing this template is to edit this file.
     name: `The Local News`,
     description: `Tracking The Spread of Coronavirus in Canada`,
     last_updated: `Mar 30, 2020 - 9:45 a.m. ET`,
-		```
-    Here you will enter the general information about your website.
+	```
+  Here you will enter the general information about your website.
 
-<br/>
 
 2. **Data**
 
 	```shell
-  data: [
-        {"province": "Alberta", "cases": 661, "deaths": 3},
-        {"province": "Saskatchewan", "cases": 156, "deaths": 0},
-        {"province": "Manitoba", "cases": 72, "deaths": 1},
-        {"province": "Newfoundland", "cases": 135, "deaths": 1},
-        {"province": "Prince Edward Island", "cases": 11, "deaths": 0},
-        {"province": "Nova Scotia", "cases": 122, "deaths": 0},
-        {"province": "Northwest Territories", "cases": 1, "deaths": 0},
-        {"province": "Nunavut", "cases": 0, "deaths": 0},
-        {"province": "Ontario", "cases": 1355, "deaths": 23},
-        {"province": "New Brunswick", "cases": 66, "deaths": 0},
-        {"province": "Yukon", "cases": 4, "deaths": 0},
-        {"province": "British Columbia", "cases": 884, "deaths": 17},
-        {"province": "Quebec", "cases": 2840, "deaths": 22},
-      ],
+    data: [
+          {"province": "Alberta", "cases": 661, "deaths": 3},
+          {"province": "Saskatchewan", "cases": 156, "deaths": 0},
+          {"province": "Manitoba", "cases": 72, "deaths": 1},
+          {"province": "Newfoundland", "cases": 135, "deaths": 1},
+          {"province": "Prince Edward Island", "cases": 11, "deaths": 0},
+          {"province": "Nova Scotia", "cases": 122, "deaths": 0},
+          {"province": "Northwest Territories", "cases": 1, "deaths": 0},
+          {"province": "Nunavut", "cases": 0, "deaths": 0},
+          {"province": "Ontario", "cases": 1355, "deaths": 23},
+          {"province": "New Brunswick", "cases": 66, "deaths": 0},
+          {"province": "Yukon", "cases": 4, "deaths": 0},
+          {"province": "British Columbia", "cases": 884, "deaths": 17},
+          {"province": "Quebec", "cases": 2840, "deaths": 22},
+        ],
 	```
 	 This is where you put the information about cases and deaths for each province. Please note that the order of the provinces is important.
-<br/>
+
 
 3. **FAQs**
 
 	```shell
     faqs: [
-      {"question": `What is a Coronavirus?`, "answer": `<p>Coronaviruses are a large family of viruses. They cause a range of illness ranging from the common cold to more severe diseases — such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV).</p>`},
+      {"question": `What is a Coronavirus?`, "answer": `<p>Answer</p>`},
       ]
   ```
 
-  Here you will put your frequently asked questions. As you can see, you can use HTML tags to further customize your question and answers. There's no limit with regard to the number of questions.
+    Here you will put your frequently asked questions. As you can see, you can use HTML tags to further customize your question and answers. There's no limit with regard to the number of questions.
 
-<br/>
 
 4. **Google Analytics**
 
