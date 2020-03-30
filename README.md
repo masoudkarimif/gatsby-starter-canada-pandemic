@@ -2,15 +2,15 @@
 
 Build a single-page website that covers the spread of a pandemic in Canada.
 
-<p align="center">
-  <a href="https://gatsby-starter-canada-pandemic.netlify.com">
-    <img alt="Gatsby" src="https://mkf-public.s3.ca-central-1.amazonaws.com/gatsby-starter-canada-pandemic-screenshot.png" />
-  </a>
-</p>
-<br/>
 Check the live demo [here](https://gatsby-starter-canada-pandemic.netlify.com/).
 
 Based on [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world). This project uses the [Milligram](https://github.com/milligram/milligram) framework for styling.
+
+<p align="center">
+  <a href="https://gatsby-starter-canada-pandemic.netlify.com">
+    <img alt="Gatsby" src="https://mkf-public.s3.ca-central-1.amazonaws.com/gatsby-starter-canada-pandemic-screenshot.png" width="600px"/>
+  </a>
+</p>
 
 
 ## 💫 Deploy
@@ -86,10 +86,10 @@ All you need to do for customizing this template is to edit this file.
 3. **FAQs**
 
 	```shell
-    faqs: [
-      {"question": `What is a Coronavirus?`, "answer": `<p>Answer</p>`},
-      ]
-  ```
+	    faqs: [
+	      {"question": `What is a Coronavirus?`, "answer": `<p>Answer</p>`},
+	      ]
+  	```
 
     Here you will put your frequently asked questions. As you can see, you can use HTML tags to further customize your question and answers. There's no limit with regard to the number of questions.
 
