@@ -142,5 +142,12 @@ module.exports = {
   plugins: [
     // Make sure this plugin is first in the array of plugins
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-111111111-1",
+        head: true,
+      },
+    },
   ],
 }
