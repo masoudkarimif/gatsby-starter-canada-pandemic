@@ -51,7 +51,7 @@ class CanadaMap extends React.Component {
 
     createThePlot() {
 
-      var w = this.props.width; var h = this.props.height, scale = this.props.scale;
+      var w = this.props.width; var h = this.props.height;
       const self =this;
 
       var svg = d3.select(this.svgRef.current).append("svg")
@@ -137,7 +137,6 @@ cumulativeOffset(element) {
 
   mouseMove(left, top) {
     const data = this.cumulativeOffset(document.getElementById("svg-holder"))
-    const popupRect = document.getElementById("popup").getBoundingClientRect();
     let popup = {...this.state.popup}
     popup.left =  left + data.left - 0
     popup.top = top + data.top - 80

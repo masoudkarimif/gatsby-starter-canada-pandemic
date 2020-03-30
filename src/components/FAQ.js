@@ -20,7 +20,8 @@ class FAQ extends React.Component {
   render() {
     return (
         <div className="faq noselect">
-          <div className="faq-question"
+          <div className="faq-question" role="button"
+              tabIndex={this.props.tabIndex}
               onClick={this.clickHandler.bind(this)}>
 
               <div className="question">{this.props.question}</div>

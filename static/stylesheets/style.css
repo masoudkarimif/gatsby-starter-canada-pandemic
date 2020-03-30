@@ -404,6 +404,9 @@ path:hover {
   border-radius: 2px;
   margin-bottom: 5px;
 }
+#updated span {
+  color: #eee;
+}
 .center-text {
   text-align: center;
 }

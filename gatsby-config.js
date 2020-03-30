@@ -1,10 +1,10 @@
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
 		siteUrl: `https://gatsby-starter-canada-pandemic.netlify.com/`,
     name: `The Local News`,
     description: `Tracking The Spread of Coronavirus in Canada`,
-    last_updated: `Mar 29, 2020 - 12:30 PM`,
+    last_updated: `Mar 30, 2020 - 9:45 a.m. ET`,
+    data_source: `<a target="_blank" href="https://newsinteractives.cbc.ca/coronavirustracker/" rel="noopener noreferrer">CBC Coronavirus Website</a>`,
     data: [
         {"province": "Alberta", "cases": 542, "deaths": 2},
         {"province": "Saskatchewan", "cases": 104, "deaths": 5},
@@ -19,9 +19,7 @@ module.exports = {
         {"province": "Yukon", "cases": 4, "deaths": 30},
         {"province": "British Columbia", "cases": 884, "deaths": 17},
         {"province": "Quebec", "cases": 2498, "deaths": 9},
-      ]
-      ,
-    data_source: `<a target="_blank" href="https://newsinteractives.cbc.ca/coronavirustracker/" rel="noopener noreferrer">CBC Coronavirus Website</a>`,
+      ],
     faqs: [
       {"question": `What is a Coronavirus?`, "answer": `<p>Coronaviruses are a large family of viruses. They cause a range of illness ranging from the common cold to more severe diseases — such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV).</p>`},
       {"question": `How is it transmitted?`, "answer": `<p>Coronaviruses are zoonotic, meaning they originally pass from animals to humans. But some, like the current one, can also pass directly between humans.</p><p>Chinese scientists confirmed there has been human-to-human transmission of the virus among close contacts such as family members. It's unclear how easily the virus is transmitted between people.</p><p>According to the Centers for Disease Control in the U.S., coronaviruses are most commonly spread by coughing or sneezing; close personal contact, such as shaking hands; or touching an object or surface with the virus on it and then touching your mouth, eyes or nose.</p>`},
@@ -38,7 +36,6 @@ module.exports = {
     ],
     },
   plugins: [
-    // Make sure this plugin is first in the array of plugins
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
