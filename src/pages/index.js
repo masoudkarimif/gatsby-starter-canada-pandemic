@@ -4,6 +4,7 @@ import Map from '../components/map'
 import LastUpdate from '../components/last-update'
 import Table from '../components/table'
 import Total from '../components/total'
+import FAQs from '../components/FAQs'
 import {useStaticQuery, graphql} from 'gatsby'
 import canadaMapData from '../../static/canada.json'
 
@@ -24,6 +25,7 @@ const data = useStaticQuery(graphql`
                   last_updated
                   data {province, cases, deaths}
                   data_source
+                  faqs {question, answer}
               }
             }
           }
@@ -37,6 +39,7 @@ const data = useStaticQuery(graphql`
           <Table data={data.site.siteMetadata.data} />
           <Total data={data.site.siteMetadata.data} />
         </div>
+        <FAQs data={data.site.siteMetadata.faqs} />
     </Layout>
     )
 }

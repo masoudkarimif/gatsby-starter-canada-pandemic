@@ -23,6 +23,10 @@ module.exports = {
       ,
     data_source: `<a target="_blank" href="https://newsinteractives.cbc.ca/coronavirustracker/" rel="noopener noreferrer">CBC Coronavirus Website</a>`,
     email: `luke@thelightside.com`,
+    faqs: [
+      {"question": `What is a Coronavirus`, "answer": `<p>Coronaviruses are a large family of viruses. They cause a range of illness ranging from the common cold to more severe diseases — such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV).</p>`},
+      {"question": `How is it transmitted`, "answer": `<p>Coronaviruses are zoonotic, meaning they originally pass from animals to humans. But some, like the current one, can also pass directly between humans.</p><p>Chinese scientists confirmed there has been human-to-human transmission of the virus among close contacts such as family members. It's unclear how easily the virus is transmitted between people.</p><p>According to the Centers for Disease Control in the U.S., coronaviruses are most commonly spread by coughing or sneezing; close personal contact, such as shaking hands; or touching an object or surface with the virus on it and then touching your mouth, eyes or nose.</p>`}
+    ],
     socialMedia : [
         {"province": "github", "link": "https://github.com/masoudkarimif/gatsby-starter-clean-resume"},
         {"province": "linkedin", "link": "https://linkedin.com"},

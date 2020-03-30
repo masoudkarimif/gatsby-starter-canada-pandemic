@@ -464,3 +464,35 @@ svg {
   }
 
 }
+
+.faq {
+  border: 1px solid #444;
+}
+.faq-question, .faq-answer {
+  padding: 8px;
+}
+.faq-answer {
+  border-top: .5px solid #ccc;
+}
+.faq-question {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+}
+.faq-question:hover {
+  color: black;
+}
+.question {
+  flex: 1;
+}
+.open-close-sign {
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}

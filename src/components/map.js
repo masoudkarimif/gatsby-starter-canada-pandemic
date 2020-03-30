@@ -96,7 +96,6 @@ class CanadaMap extends React.Component {
 
     componentDidUpdate() {
       this.ratio = (this.svgRef.current.getBoundingClientRect().height / this.props.height)
-      console.log(this.ratio)
     }
 
     render() {
