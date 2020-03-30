@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo "installing npm packages"
+      - "npm install"
+  build:
+    commands:
+      - echo "build started"
+      - "npm run build"
+
+  post_build:
+    commands:
+      - echo "post_build started"
+      - aws s3 sync public/ $BUCKET --exclude "*.map" --acl public-read --delete
