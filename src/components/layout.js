@@ -10,10 +10,7 @@ const Layout = (props)=> {
           query  {
             site {
               siteMetadata {
-                email
-                theme
                 name
-                font
               }
             }
           }
