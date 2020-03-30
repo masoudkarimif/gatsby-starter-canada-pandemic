@@ -8,10 +8,14 @@ export default (props) => {
 
   return (
     <div className="column center-text" id="total-holder">
-        <h1 className="h-title">Total Cases</h1>
-        <h1 className="h-value">{numberWithCommas(totalCases)}</h1>
-        <h1 className="h-title">Total Deaths</h1>
-        <h1 className="h-value">{numberWithCommas(totalDeaths)}</h1>
+        <div className="total-group">
+          <h1 className="h-title">Total Cases</h1>
+          <h1 className="h-value">{numberWithCommas(totalCases)}</h1>
+        </div>
+        <div className="total-group">
+          <h1 className="h-title">Total Deaths</h1>
+          <h1 className="h-value">{numberWithCommas(totalDeaths)}</h1>
+        </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ export default (props)=> {
   return (
     <div className="column" id="table-holder">
       <table>
-        <thead>
+        <thead> 
           <tr>
             <th>Province</th>
             <th>Cases</th>

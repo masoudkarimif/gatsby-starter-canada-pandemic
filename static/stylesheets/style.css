@@ -426,6 +426,9 @@ path:hover {
 }
 #total-holder {
 }
+.h-value {
+  font-size: 2.8em;
+}
 .h-title {
   margin-bottom: 0;
   flex: 1;
@@ -436,4 +439,28 @@ path:hover {
 svg {
   max-width: 100%;
   pointer-events: auto;
+}
+@media screen and (max-width: 640px) {
+  #total-holder {
+    flex-direction: row;
+    display: flex;
+  }
+  .total-group {
+    flex: 1;
+  }
+
+  .h-value {
+    font-size: 2.3em;
+  }
+
+  .h-title {
+    font-size: 1.8em;
+  }
+  #table-holder th {
+    font-size: 0.9em;
+  }
+  #table-holder td {
+    font-size: 1.0em;
+  }
+
 }
