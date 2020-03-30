@@ -1,9 +1,10 @@
 import React from 'react'
+import {numberWithCommas} from "../helpers/helper"
 
 
 export default (props)=> {
 
-  const rows = props.data.map((row, i) => <tr key={i}><td>{row.province}</td><td>{row.cases}</td><td>{row.deaths}</td></tr>)
+  const rows = props.data.map((row, i) => <tr key={i}><td>{row.province}</td><td>{numberWithCommas(row.cases)}</td><td>{numberWithCommas(row.deaths)}</td></tr>)
   return (
     <div className="column" id="table-holder">
       <table>

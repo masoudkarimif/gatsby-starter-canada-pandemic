@@ -1,5 +1,6 @@
 import React from "react"
 import * as d3 from "d3";
+import {numberWithCommas} from "../helpers/helper"
 
 const Popup = (props) => {
   return (
@@ -14,8 +15,8 @@ const Popup = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td>{props.cases}</td>
-            <td>{props.deaths}</td>
+            <td>{numberWithCommas(props.cases)}</td>
+            <td>{numberWithCommas(props.deaths)}</td>
           </tr>
         </tbody>
       </table>
@@ -154,8 +155,8 @@ cumulativeOffset(element) {
     this.setState({
            popup,
            province,
-           cases,
-           deaths
+           cases: numberWithCommas(cases),
+           deaths: numberWithCommas(deaths)
          })
   }
 
