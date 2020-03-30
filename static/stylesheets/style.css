@@ -95,11 +95,10 @@
  #page-content {
      padding-top: 80px;
 }
- #content-wrapper {
-}
  footer {
      margin-top: 80px;
      padding-top: 25px;
+     padding-bottom: 25px;
      font-size: .7em;
      border-top: 1px solid #f8f8f8;
      color: #888;
@@ -113,22 +112,6 @@
 }
  #by-gatsby {
      font-size: .9em;
-}
- #profile-wrapper {
-     text-align: center;
-     flex: 2 2 auto;
-}
- #profile-wrapper p {
-     margin-bottom: 2px;
-}
- #profile-img {
-     max-width: 180px;
-}
- .social-icon:not(:last-child) {
-     margin-right: 4px;
-}
- #social-icons-wrapper {
-     padding-top: 8px;
 }
  blockquote, dl, figure, form, ol, p, pre, table, ul {
      margin-bottom: 1.3rem;
