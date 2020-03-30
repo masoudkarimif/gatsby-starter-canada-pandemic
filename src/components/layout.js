@@ -32,12 +32,10 @@ const Layout = (props)=> {
                 name={data.site.siteMetadata.name} />
 
             <div className="container" id="page-content">
-                <div className="row">
-                    <div className="column" id="content-wrapper">
+                    <div className="" id="content-wrapper">
                       <PageHeader title={props.pageDescription}/>
-                          {props.children}
                     </div>
-                </div>
+                    {props.children}
             </div>
 
             <footer>

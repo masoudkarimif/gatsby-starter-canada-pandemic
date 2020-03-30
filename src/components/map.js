@@ -54,17 +54,20 @@ class CanadaMap extends React.Component {
       const self =this;
 
       var svg = d3.select(this.svgRef.current).append("svg")
-        .attr("width", w)
-        .attr("height", h)
+        .attr("width", "100%")
+        .attr("height", "100%")
         .attr("id", "svg-map-canada")
+        .attr("pointer-events", "auto")
+        .attr("preserveAspectRatio", "none")
+        .attr("viewBox", `0 0 ${this.props.width} ${this.props.height}`)
         .on("mousemove", function(e){
-              self.props.mouseMoveHandler(d3.mouse(this), self.svgRef.current.getBoundingClientRect())
+              self.props.mouseMoveHandler(d3.mouse(this)[0] * self.ratio, d3.mouse(this)[1] * self.ratio)
         })
 
     var projection = d3.geo.azimuthalEqualArea()
       .rotate([100, -45])
       .center([5,18])
-      .scale(scale)
+      .scale(this.props.scale)
       .translate([w/2, h/2])
 
     var path = d3.geo.path()
@@ -78,7 +81,7 @@ class CanadaMap extends React.Component {
         .attr("fill", (d,i)=>this.fillColor(this.popupData[i].cases))
         .attr("stroke", "#444")
         .attr("stroke-width", "0.35")
-        .on("mouseenter", function(d, i){
+        .on("mouseenter", function(d, i, e){
             self.props.mouseEnterHandler(self.popupData[i].province, self.popupData[i].cases, self.popupData[i].deaths);
         })
         .on("mouseleave", function() {
@@ -90,9 +93,14 @@ class CanadaMap extends React.Component {
       this.createThePlot();
     }
 
+    componentDidUpdate() {
+      this.ratio = (this.svgRef.current.getBoundingClientRect().height / this.props.height)
+      console.log(this.ratio)
+    }
+
     render() {
       return (
-        <div ref={this.svgRef} id="svg-holder" style={{width: this.props.width, height: this.props.height}}></div>
+        <div ref={this.svgRef} id="svg-holder" className="column"></div>
       )
     }
 }
@@ -127,12 +135,13 @@ cumulativeOffset(element) {
     };
   }
 
-  mouseMove(e) {
+  mouseMove(left, top) {
     const data = this.cumulativeOffset(document.getElementById("svg-holder"))
     const popupRect = document.getElementById("popup").getBoundingClientRect();
     let popup = {...this.state.popup}
-    popup.left = e[0] + data.left - popupRect.width / 2
-    popup.top = e[1] + data.top - popupRect.height - 10
+    popup.left =  left + data.left - 0
+    popup.top = top + data.top - 80
+
 
      this.setState({
        popup
@@ -160,7 +169,7 @@ cumulativeOffset(element) {
 
   render() {
       return (
-        <div id="map-holder">
+        <div id="map-holder" className="row">
           <Popup
               province={this.state.province}
               cases={this.state.cases}

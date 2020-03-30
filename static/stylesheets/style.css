@@ -385,7 +385,8 @@ path:hover {
   text-align: center;
 }
 #svg-holder {
-  display: inline-block;
+  display: block;
+  padding: 0;
 }
 .container {
   position: static;
@@ -422,4 +423,17 @@ path:hover {
 }
 #table-holder tbody tr:nth-child(odd) {
   background-color: #efefef;
+}
+#total-holder {
+}
+.h-title {
+  margin-bottom: 0;
+  flex: 1;
+  color: #aaa;
+  font-size: 2.4em;
+  margin-top: 60px;
+}
+svg {
+  max-width: 100%;
+  pointer-events: auto;
 }

@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Map from '../components/map'
 import LastUpdate from '../components/last-update'
 import Table from '../components/table'
+import Total from '../components/total'
 import {useStaticQuery, graphql} from 'gatsby'
 import canadaMapData from '../../static/canada.json'
 
@@ -34,7 +35,7 @@ const data = useStaticQuery(graphql`
         <DataSourceReference data={data.site.siteMetadata.data_source} />
         <div className="row" id="middle-info-holder">
           <Table data={data.site.siteMetadata.data} />
-          <p className="column">Something</p>
+          <Total data={data.site.siteMetadata.data} />
         </div>
     </Layout>
     )
