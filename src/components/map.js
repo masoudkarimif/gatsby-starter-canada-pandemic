@@ -169,7 +169,7 @@ cumulativeOffset(element) {
 
   render() {
       return (
-        <div id="map-holder" className="row">
+        <div id="map-holder" className="container">
           <Popup
               province={this.state.province}
               cases={this.state.cases}

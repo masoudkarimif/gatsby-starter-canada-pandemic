@@ -31,7 +31,7 @@ const Layout = (props)=> {
                 currentPage={props.pageTitle}
                 name={data.site.siteMetadata.name} />
 
-            <div className="container" id="page-content">
+            <div id="page-content">
                     <div className="" id="content-wrapper">
                       <PageHeader title={props.pageDescription}/>
                     </div>

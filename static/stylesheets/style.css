@@ -135,7 +135,10 @@
 }
  @media screen and (max-width: 640px) {
      #page-content {
-         padding-top: 72px;
+         padding-top: 50px;
+    }
+    #map-holder.container {
+      padding: 0;
     }
      #profile-img {
     }
