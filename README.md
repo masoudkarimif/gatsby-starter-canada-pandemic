@@ -1,26 +1,33 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+# gatsby-starter-canada-pandemic
+
+Build a single-page website that covers the spread of a pandemic in Canada.
+
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://gatsby-starter-canada-pandemic.netlify.com">
+    <img alt="Gatsby" src="https://mkf-public.s3.ca-central-1.amazonaws.com/gatsby-starter-canada-pandemic-screenshot.png" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+<br/>
+Check the live demo [here](https://gatsby-starter-canada-pandemic.netlify.com/).
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Based on [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world). This project uses the [Milligram](https://github.com/milligram/milligram) framework for styling.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+
+## 💫 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/masoudkarimif/gatsby-starter-canada-pandemic)
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/masoudkarimif/gatsby-starter-canada-pandemic)
 
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+    Use the Gatsby CLI to create a new site, specifying the canada-pandemic starter.
 
     ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
+    # create a new Gatsby site using the canada-pandemic starter
+    gatsby new my-pandemic-coverage https://github.com/masoudkarimif/gatsby-starter-canada-pandemic
     ```
 
 1.  **Start developing.**
@@ -28,7 +35,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-hello-world-starter/
+    cd my-pandemic-coverage/
     gatsby develop
     ```
 
@@ -36,64 +43,88 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `my-pandemic-coverage` directory in your code editor of choice and edit `gatsby-config.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+## Customizing `gatsby-config.js`
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+All you need to do for customizing this template is to edit this file.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+1. **General information**
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+	```shell
+    siteUrl: `https://gatsby-starter-canada-pandemic.netlify.com/`,
+    name: `The Local News`,
+    description: `Tracking The Spread of Coronavirus in Canada`,
+    last_updated: `Mar 30, 2020 - 9:45 a.m. ET`,
+		```
+    Here you will enter the general information about your website.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+<br/>
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+2. **Data**
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+	```shell
+  data: [
+        {"province": "Alberta", "cases": 661, "deaths": 3},
+        {"province": "Saskatchewan", "cases": 156, "deaths": 0},
+        {"province": "Manitoba", "cases": 72, "deaths": 1},
+        {"province": "Newfoundland", "cases": 135, "deaths": 1},
+        {"province": "Prince Edward Island", "cases": 11, "deaths": 0},
+        {"province": "Nova Scotia", "cases": 122, "deaths": 0},
+        {"province": "Northwest Territories", "cases": 1, "deaths": 0},
+        {"province": "Nunavut", "cases": 0, "deaths": 0},
+        {"province": "Ontario", "cases": 1355, "deaths": 23},
+        {"province": "New Brunswick", "cases": 66, "deaths": 0},
+        {"province": "Yukon", "cases": 4, "deaths": 0},
+        {"province": "British Columbia", "cases": 884, "deaths": 17},
+        {"province": "Quebec", "cases": 2840, "deaths": 22},
+      ],
+	```
+	 This is where you put the information about cases and deaths for each province. Please note that the order of the provinces is important.
+<br/>
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+3. **FAQs**
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+	```shell
+    faqs: [
+      {"question": `What is a Coronavirus?`, "answer": `<p>Coronaviruses are a large family of viruses. They cause a range of illness ranging from the common cold to more severe diseases — such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV).</p>`},
+      ]
+  ```
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+  Here you will put your frequently asked questions. As you can see, you can use HTML tags to further customize your question and answers. There's no limit with regard to the number of questions.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+<br/>
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+4. **Google Analytics**
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+	```shell
+    plugins: [
+        {
+          resolve: `gatsby-plugin-google-analytics`,
+          options: {
+            trackingId: "UA-111111111-1",
+            head: true,
+          },
+        },
+      ],
+	```
+	Add your Google Analytics tracking id here.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+<br/>
 
-12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
+## AWS build file
+You can use the `buildspec.yml` file in the root directory for AWS CodeBuild. You just need to define an environment variable named `BUCKET` inside your CodeBuild project that points to the S3 bucket you want to deploy your website from.
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+## Changing favicon
+Simply replace the `favicon.ico` files in the `/static` directory.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
+## Contributions
+PRs are welcome!
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+## License
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](LICENSE)
