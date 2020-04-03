@@ -105,29 +105,59 @@ class CanadaMap extends React.Component {
               self.props.mouseMoveHandler(d3.mouse(this)[0] * self.ratio, d3.mouse(this)[1] * self.ratio)
         })
 
-    const projection = d3.geo.azimuthalEqualArea()
-      .rotate([100, -45])
-      .center([5,18])
-      .scale(this.props.scale)
-      .translate([w/2, h/2])
+			const projection = d3.geo.azimuthalEqualArea()
+				.rotate([100, -45])
+				.center([5,18])
+				.scale(this.props.scale)
+				.translate([w/2, h/2])
 
-    const path = d3.geo.path()
-      .projection(projection)
+			const path = d3.geo.path()
+				.projection(projection)
 
-    svg.selectAll("append")
-        .data(this.mapData.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("fill", (d,i)=>this.fillColor(this.popupData[i].cases))
-        .attr("stroke", "#444")
-        .attr("stroke-width", "0.35")
-        .on("mouseenter", function(d, i, e){
-            self.props.mouseEnterHandler(self.popupData[i].province, self.popupData[i].cases, self.popupData[i].deaths);
-        })
-        .on("mouseleave", function() {
-            self.props.mouseLeaveHandler();
-        })
+			svg.selectAll("append")
+					.data(this.mapData.features)
+					.enter()
+					.append("path")
+					.attr("d", path)
+					.attr("fill", (d,i)=>this.fillColor(this.popupData[i].cases))
+					.attr("stroke", "#444")
+					.attr("stroke-width", "0.35")
+					.on("mouseenter", function(d, i, e){
+							self.props.mouseEnterHandler(self.popupData[i].province, self.popupData[i].cases, self.popupData[i].deaths);
+					})
+					.on("mouseleave", function() {
+							self.props.mouseLeaveHandler();
+					})
+			const countPos = [
+						{cx: 213.48, cy: 396},
+						{cx: 285, cy: 417},
+						{cx:353, cy: 413},
+						{cx: 628, cy: 354},
+						{cx: 673, cy: 451},
+						{cx: 670, cy: 480},
+						{cx: 204, cy: 259},
+						{cx: 349, cy: 283},
+						{cx: 442, cy: 449},
+						{cx: 644, cy: 465},
+						{cx: 113, cy: 244},
+						{cx: 134, cy: 375},
+						{cx: 560, cy: 402}
+					]
+
+			svg.selectAll("append")
+          .data(this.props.popupData)
+          .enter()
+          .append("text")
+          .attr("x", (d,i)=> countPos[i].cx)
+          .attr("y", (d,i)=> countPos[i].cy)
+          .attr("text-anchor", "middle")
+          .attr("class", "counter-on-map")
+          .text((d,i)=>d.cases)
+          .on("mousemove", function(e){
+                self.props.mouseMoveHandler(d3.mouse(this)[0] * self.ratio, d3.mouse(this)[1] * self.ratio)
+            })
+
+
     }
 
     componentDidMount() {

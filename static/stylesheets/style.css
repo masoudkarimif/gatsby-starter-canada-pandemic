@@ -437,3 +437,6 @@ svg {
 .dummy-link {
   height: 40px;
 }
+.counter-on-map {
+	font-size: .7em;
+}
