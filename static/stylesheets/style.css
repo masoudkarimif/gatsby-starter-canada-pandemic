@@ -29,7 +29,7 @@
      padding: 0 2px 4px 2px;
 }
  .site-nav .page-link:not(:last-child) {
-     margin-right: 60px;
+     margin-right: 35px;
 }
  @media screen and (max-width: 640px) {
      .site-nav {
