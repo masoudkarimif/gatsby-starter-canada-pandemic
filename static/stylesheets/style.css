@@ -273,14 +273,14 @@
 }
 
 path:hover {
-  fill: gray;
+  fill: #ccc;
 }
 
 #popup {
   position: absolute;
   left: 100px;
   padding: 4px 10px;
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,1.0);
   color: black;
   font-size: 15px;
   border-radius: 5px;
