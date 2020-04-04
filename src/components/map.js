@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useRef} from "react"
 import * as d3 from "d3";
 import {numberWithCommas} from "../helpers/helper"
 
@@ -25,32 +25,19 @@ const Popup = (props) => {
 }
 
 
-class CanadaMap extends React.Component {
-    constructor(props)  {
-      super(props);
-      this.state = {
-                d3: '',
-                visibility: 'none',
-                currentProvince: '',
-                currentCases: null,
-                currentDeaths: null
-              }
-      this.svgRef = React.createRef();
-      this.mapData = this.props.mapData;
+const CanadaMap = ({mapData, popupData, width, height, scale, mouseLeaveHandler, mouseMoveHandler, mouseEnterHandler}) => {
 
-      this.popupData = this.props.popupData;
-      this.totalCases = this.props.popupData.reduce((total, item)=> total+parseInt(item.cases), 0);
+    const svgRef = useRef(null)
+    let ratio = 0
+    const totalCases = popupData.reduce((total, item)=> total+parseInt(item.cases), 0);
 
-    }
-
-
-    fillColor(number) {
+    const fillColor = number => {
       if (number < 50) {
         return "#ddd";
       }
       const h = 0;
       let s = 100;
-      let l = 95 - (number / this.totalCases) * 100
+      let l = 95 - (number / totalCases) * 100
       s /= 100;
       l /= 100;
 
@@ -88,45 +75,45 @@ class CanadaMap extends React.Component {
       return "#" + r + g + b;
     }
 
-    createThePlot() {
+    const createThePlot = ()=> {
 
-      const w = this.props.width
-      const h = this.props.height
-      const self = this
+      const w = width
+      const h = height
+      //const self = this
 
-      const svg = d3.select(this.svgRef.current).append("svg")
+      const svg = d3.select(svgRef.current).append("svg")
         .attr("width", "100%")
         .attr("height", "100%")
         .attr("id", "svg-map-canada")
         .attr("pointer-events", "auto")
         .attr("preserveAspectRatio", "none")
-        .attr("viewBox", `0 0 ${this.props.width} ${this.props.height}`)
+        .attr("viewBox", `0 0 ${width} ${height}`)
         .on("mousemove", function(e){
-              self.props.mouseMoveHandler(d3.mouse(this)[0] * self.ratio, d3.mouse(this)[1] * self.ratio)
+              mouseMoveHandler(d3.mouse(this)[0] * ratio, d3.mouse(this)[1] * ratio)
         })
 
 			const projection = d3.geo.azimuthalEqualArea()
 				.rotate([100, -45])
 				.center([5,18])
-				.scale(this.props.scale)
+				.scale(scale)
 				.translate([w/2, h/2])
 
 			const path = d3.geo.path()
 				.projection(projection)
 
 			svg.selectAll("append")
-					.data(this.mapData.features)
+					.data(mapData.features)
 					.enter()
 					.append("path")
 					.attr("d", path)
-					.attr("fill", (d,i)=>this.fillColor(this.popupData[i].cases))
+					.attr("fill", (d,i)=>fillColor(popupData[i].cases))
 					.attr("stroke", "#444")
 					.attr("stroke-width", "0.35")
 					.on("mouseenter", function(d, i, e){
-							self.props.mouseEnterHandler(self.popupData[i].province, self.popupData[i].cases, self.popupData[i].deaths);
+							mouseEnterHandler(popupData[i].province, popupData[i].cases, popupData[i].deaths);
 					})
 					.on("mouseleave", function() {
-							self.props.mouseLeaveHandler();
+							mouseLeaveHandler();
 					})
 			const countPos = [
 						{cx: 213.48, cy: 396},
@@ -144,8 +131,10 @@ class CanadaMap extends React.Component {
 						{cx: 560, cy: 402}
 					]
 
+      ratio = svgRef.current.getBoundingClientRect().height / height
+
 			svg.selectAll("append")
-          .data(this.props.popupData)
+          .data(popupData)
           .enter()
           .append("text")
           .attr("x", (d,i)=> countPos[i].cx)
@@ -154,25 +143,27 @@ class CanadaMap extends React.Component {
           .attr("class", "counter-on-map")
           .text((d,i)=>d.cases)
           .on("mousemove", function(e){
-                self.props.mouseMoveHandler(d3.mouse(this)[0] * self.ratio, d3.mouse(this)[1] * self.ratio)
+                mouseMoveHandler(d3.mouse(this)[0] * ratio, d3.mouse(this)[1] * ratio)
             })
 
 
     }
 
-    componentDidMount() {
-      this.createThePlot()
-    }
+    useEffect(()=>{
+        createThePlot()
+    }, [])
 
-    componentDidUpdate() {
-      this.ratio = (this.svgRef.current.getBoundingClientRect().height / this.props.height)
-    }
+    //componentDidMount() {
+    //  this.createThePlot()
+    //}
+//
+    //componentDidUpdate() {
+    //  ratio = (svgRef.current.getBoundingClientRect().height / height)
+    //}
 
-    render() {
       return (
-        <div ref={this.svgRef} id="svg-holder" className="column"></div>
+        <div ref={svgRef} id="svg-holder" className="column"></div>
       )
-    }
 }
 
 class Map extends React.Component {
@@ -236,7 +227,7 @@ cumulativeOffset(element) {
 
   render() {
       return (
-        <div id="map-holder" role="img" aria-lable="Map showing provinces hit by the virus" className="container">
+        <div id="map-holder" role="img" aria-label="Map showing provinces hit by the virus" className="container">
           <Popup
               province={this.state.province}
               cases={this.state.cases}
