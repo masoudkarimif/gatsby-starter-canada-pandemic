@@ -178,38 +178,6 @@
      padding-top: 6px;
      color: #444;
 }
- .skill-wrapper {
-     margin-bottom: 16px;
-}
- .skill-meter-wrapper {
-     width: 100%;
-     border: 1px solid #efefef;
-     border-radius: 4px;
-     height: 25px;
-     overflow: hidden;
-}
- .skill-name {
-     margin-bottom: .5rem;
-     text-indent: 2px;
-}
- #profile-info-wrapper {
-     margin-bottom: 4px;
-}
- #profile-name {
-     margin-bottom: 2px;
-     color: #555;
-     font-size: 2.3rem;
-}
- #profile-role {
-     margin-bottom: 2px;
-     font-size: 1.5rem;
-}
- #profile-email {
-     font-size: .8em;
-}
- .social-icon:hover {
-     opacity: .9;
-}
  #menu-name {
      font-size: 1.2em;
 }
@@ -239,32 +207,24 @@
  a {
      color: #9b4dca;
 }
- .skill-meter {
-     background-color: #9b4dca;
-}
  a:hover, a:focus, .site-nav .page-link.active {
      color: #50A !important;
 }
  .site-header {
      border-top-color: #50A;
 }
-
 .page-header {
   text-align: center;
   color: #444;
   margin-bottom: 4px;
 }
-
-
 .feature {
   fill: #ccc;
   cursor: pointer;
 }
-
 .feature.active {
   fill: orange;
 }
-
 .mesh {
   fill: none;
   stroke: #fff;
@@ -275,7 +235,6 @@
 path:hover {
   fill: #ccc;
 }
-
 #popup {
   position: absolute;
   left: 100px;
