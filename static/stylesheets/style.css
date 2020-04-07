@@ -123,13 +123,7 @@
     #map-holder.container {
       padding: 0;
     }
-     #profile-img {
-    }
-     #profile-wrapper {
-         border-bottom: 1px solid #f8f8f8;
-         padding-bottom: 16px;
-    }
-     #content-wrapper {
+    #content-wrapper {
          border-left: none;
          padding-top: 16px;
          padding-left: 0rem;
