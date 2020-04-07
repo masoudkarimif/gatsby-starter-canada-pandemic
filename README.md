@@ -8,7 +8,7 @@ Based on [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter
 
 <p align="center">
   <a href="https://gatsby-starter-canada-pandemic.netlify.com">
-    <img alt="Gatsby" src="https://mkf-public.s3.ca-central-1.amazonaws.com/gatsby-starter-canada-pandemic-screenshot.png" width="600px"/>
+    <img alt="Gatsby" src="https://mkf-public.s3.ca-central-1.amazonaws.com/gatsby-starter-canada-pandemic-v2.png" width="600px"/>
   </a>
 </p>
 
