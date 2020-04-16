@@ -36,7 +36,7 @@ Based on [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter
 
     ```shell
     cd my-pandemic-coverage/
-		npm install
+    npm install
     gatsby develop
     ```
 
