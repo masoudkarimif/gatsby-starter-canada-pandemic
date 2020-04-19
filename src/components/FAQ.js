@@ -1,43 +1,27 @@
-import React from "react"
+import React, {useState} from "react"
 
-class FAQ extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      open: false,
-      openCloseSign: "+",
-    }
-  }
+export default ({tabIndex, question, answer}) => {
+    const [open, setOpen] = useState(false)
+    const [openCloseSign, updateSign] = useState("+")
 
-  clickHandler() {
-    this.setState({
-      open: !this.state.open,
-      openCloseSign: this.state.open ? "+" : "-",
-    })
-  }
-
-  render() {
     return (
       <div className="faq noselect">
         <div
           className="faq-question"
           role="button"
-          tabIndex={this.props.tabIndex}
-          onClick={this.clickHandler.bind(this)}
+          tabIndex={tabIndex}
+          onClick={()=>{setOpen(!open); updateSign(open ? "+" : "-")}}
         >
-          <div className="question">{this.props.question}</div>
-          <div className="open-close-sign">{this.state.openCloseSign}</div>
+          <div className="question">{question}</div>
+          <div className="open-close-sign">{openCloseSign}</div>
         </div>
 
-        {this.state.open ? (
+        {open ? (
           <div
             className="faq-answer"
-            dangerouslySetInnerHTML={{ __html: this.props.answer }}
+            dangerouslySetInnerHTML={{ __html: answer }}
           />
         ) : null}
       </div>
     )
-  }
 }
-
-export default FAQ
