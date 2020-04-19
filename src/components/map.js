@@ -1,13 +1,16 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import { numberWithCommas } from "../helpers/helper"
 
 const Popup = props => {
+
+  useEffect(() => {
+  })
   return (
     <div
       id="popup"
       style={{
-        display: props.visibility,
+        display: (props.visibility) ? "block" : "none",
         left: props.left + "px",
         top: props.top + "px",
       }}
@@ -186,22 +189,14 @@ const CanadaMap = ({
   return <div ref={svgRef} id="svg-holder" className="column"></div>
 }
 
-class Map extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      province: "",
-      cases: 0,
-      deaths: 0,
-      popup: {
-        visibility: "none",
-        left: 0,
-        top: 0,
-      },
-    }
-  }
+export default ({data, mapData}) => {
+    const [province, setProvince] = useState("")
+    const [cases, setCases] = useState(0)
+    const [deaths, setDeaths] = useState(0)
+    const [popup, setPopup] = useState({left: 0, top: 0})
+    const [visible, setVisible] = useState(false)
 
-  cumulativeOffset(element) {
+  const cumulativeOffset = (element) => {
     let top = 0,
       left = 0
     do {
@@ -216,36 +211,28 @@ class Map extends React.Component {
     }
   }
 
-  mouseMove(left, top) {
-    const data = this.cumulativeOffset(document.getElementById("svg-holder"))
-    let popup = { ...this.state.popup }
-    popup.left = left + data.left - 0
-    popup.top = top + data.top - 80
-    this.setState({
-      popup,
-    })
+  const mouseMove = (left, top) => {
+    const data = cumulativeOffset(document.getElementById("svg-holder"))
+    let tmp = { ...popup }
+    tmp.left = left + data.left - 0
+    tmp.top = top + data.top - 80
+    setPopup(tmp)
   }
 
-  mouseEnter(province, cases, deaths) {
-    let popup = { ...this.state.popup }
-    popup.visibility = "block"
-    this.setState({
-      popup,
-      province,
-      cases: numberWithCommas(cases),
-      deaths: numberWithCommas(deaths),
-    })
+
+  const mouseEnter = (province, cases, deaths) => {
+    setVisible(true)
+    setProvince(province)
+    setCases(numberWithCommas(cases))
+    setDeaths(numberWithCommas(deaths))
   }
 
-  mouseLeave() {
-    let popup = { ...this.state.popup }
-    popup.visibility = "none"
-    this.setState({
-      popup,
-    })
+  const mouseLeave = ()=> {
+    setVisible(false)
+    //setPopup(tmp)
   }
 
-  render() {
+
     return (
       <div
         id="map-holder"
@@ -254,27 +241,24 @@ class Map extends React.Component {
         className="container"
       >
         <Popup
-          province={this.state.province}
-          cases={this.state.cases}
-          deaths={this.state.deaths}
-          visibility={this.state.popup.visibility}
-          left={this.state.popup.left}
-          top={this.state.popup.top}
+          province={province}
+          cases={cases}
+          deaths={deaths}
+          visibility={visible}
+          left={popup.left}
+          top={popup.top}
         />
 
         <CanadaMap
-          mapData={this.props.mapData}
-          popupData={this.props.data}
-          mouseMoveHandler={this.mouseMove.bind(this)}
-          mouseEnterHandler={this.mouseEnter.bind(this)}
-          mouseLeaveHandler={this.mouseLeave.bind(this)}
+          mapData={mapData}
+          popupData={data}
+          mouseMoveHandler={mouseMove}
+          mouseEnterHandler={mouseEnter}
+          mouseLeaveHandler={mouseLeave}
           width={800}
           height={600}
           scale={800}
         />
       </div>
     )
-  }
 }
-
-export default Map
