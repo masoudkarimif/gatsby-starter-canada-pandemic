@@ -3,14 +3,11 @@ import * as d3 from "d3"
 import { numberWithCommas } from "../helpers/helper"
 
 const Popup = props => {
-
-  useEffect(() => {
-  })
   return (
     <div
       id="popup"
       style={{
-        display: (props.visibility) ? "block" : "none",
+        display: props.visibility ? "block" : "none",
         left: props.left + "px",
         top: props.top + "px",
       }}
@@ -189,14 +186,14 @@ const CanadaMap = ({
   return <div ref={svgRef} id="svg-holder" className="column"></div>
 }
 
-export default ({data, mapData}) => {
-    const [province, setProvince] = useState("")
-    const [cases, setCases] = useState(0)
-    const [deaths, setDeaths] = useState(0)
-    const [popup, setPopup] = useState({left: 0, top: 0})
-    const [visible, setVisible] = useState(false)
+export default ({ data, mapData }) => {
+  const [province, setProvince] = useState("")
+  const [cases, setCases] = useState(0)
+  const [deaths, setDeaths] = useState(0)
+  const [popup, setPopup] = useState({ left: 0, top: 0 })
+  const [visible, setVisible] = useState(false)
 
-  const cumulativeOffset = (element) => {
+  const cumulativeOffset = element => {
     let top = 0,
       left = 0
     do {
@@ -219,7 +216,6 @@ export default ({data, mapData}) => {
     setPopup(tmp)
   }
 
-
   const mouseEnter = (province, cases, deaths) => {
     setVisible(true)
     setProvince(province)
@@ -227,38 +223,36 @@ export default ({data, mapData}) => {
     setDeaths(numberWithCommas(deaths))
   }
 
-  const mouseLeave = ()=> {
+  const mouseLeave = () => {
     setVisible(false)
-    //setPopup(tmp)
   }
 
+  return (
+    <div
+      id="map-holder"
+      role="img"
+      aria-label="Map showing provinces hit by the virus"
+      className="container"
+    >
+      <Popup
+        province={province}
+        cases={cases}
+        deaths={deaths}
+        visibility={visible}
+        left={popup.left}
+        top={popup.top}
+      />
 
-    return (
-      <div
-        id="map-holder"
-        role="img"
-        aria-label="Map showing provinces hit by the virus"
-        className="container"
-      >
-        <Popup
-          province={province}
-          cases={cases}
-          deaths={deaths}
-          visibility={visible}
-          left={popup.left}
-          top={popup.top}
-        />
-
-        <CanadaMap
-          mapData={mapData}
-          popupData={data}
-          mouseMoveHandler={mouseMove}
-          mouseEnterHandler={mouseEnter}
-          mouseLeaveHandler={mouseLeave}
-          width={800}
-          height={600}
-          scale={800}
-        />
-      </div>
-    )
+      <CanadaMap
+        mapData={mapData}
+        popupData={data}
+        mouseMoveHandler={mouseMove}
+        mouseEnterHandler={mouseEnter}
+        mouseLeaveHandler={mouseLeave}
+        width={800}
+        height={600}
+        scale={800}
+      />
+    </div>
+  )
 }
