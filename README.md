@@ -2,7 +2,9 @@
 
 Build a single-page website that covers the spread of a pandemic in Canada.
 
-Check the live demo [here](https://gatsby-starter-canada-pandemic.netlify.com/).
+Check out the live demo [here](https://gatsby-starter-canada-pandemic.netlify.com/).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/09ea87ff-4ecf-4eee-a7e6-9f74ec126925/deploy-status)](https://app.netlify.com/sites/gatsby-starter-canada-pandemic/deploys)
 
 Based on [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world). This project uses the [Milligram](https://github.com/milligram/milligram) framework for styling.
 
